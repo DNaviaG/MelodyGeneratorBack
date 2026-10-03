@@ -4,6 +4,7 @@ Backend del generador de melodías: genera melodías musicalmente correctas a pa
 escala, y gestiona los usuarios de la aplicación.
 
 Este repositorio es **la parte de servidor**. El frontend (Angular) tiene su propio repositorio.
+https://github.com/DNaviaG/MelodyGeneratorFront
 
 ## Qué hace el proyecto
 
