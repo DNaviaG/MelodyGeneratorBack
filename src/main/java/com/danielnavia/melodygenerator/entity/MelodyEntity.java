@@ -37,8 +37,11 @@ public class MelodyEntity {
     @Column(name = "mode", nullable = false)
     private Mode mode;
 
+    @Column(name = "name", nullable = false)
+    private String name;
+
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "notes", columnDefinition = "jsonb")
+    @Column(name = "melody", columnDefinition = "jsonb")
     private List<Measure> measures;
 
     @Column(name = "created_at", nullable = false)

@@ -2,7 +2,10 @@ package com.danielnavia.melodygenerator.service;
 
 import com.danielnavia.melodygenerator.dto.user.UserRequest;
 import com.danielnavia.melodygenerator.dto.user.UserResponse;
+import com.danielnavia.melodygenerator.entity.RoleEntity;
 import com.danielnavia.melodygenerator.entity.UserEntity;
+import com.danielnavia.melodygenerator.model.Role;
+import com.danielnavia.melodygenerator.repository.RoleRepository;
 import com.danielnavia.melodygenerator.repository.UserRepository;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,6 +24,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final RoleRepository roleRepository;
 
     /**
      * Crea y guarda un nuevo usuario.
@@ -35,6 +39,9 @@ public class UserService {
                 passwordEncoder.encode(request.getPassword()),
                 LocalDateTime.now()
         );
+        RoleEntity userRole = roleRepository.findByName(Role.USER)
+                .orElseThrow(() -> new IllegalStateException("El rol USER no existe en la base de datos"));
+        user.getRoles().add(userRole);
         UserEntity savedUser = userRepository.save(user);
         return createUserResponse(savedUser);
     }

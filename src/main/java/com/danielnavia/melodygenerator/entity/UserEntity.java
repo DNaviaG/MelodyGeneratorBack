@@ -5,7 +5,9 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -46,7 +48,7 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     @ToString.Exclude
-    private List<RoleEntity> roles = new ArrayList<>();
+    private Set<RoleEntity> roles = new HashSet<>();
 
     //Relación  1:N a melody, un usuario puede tener  muchas melodias
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)

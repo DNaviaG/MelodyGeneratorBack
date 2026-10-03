@@ -6,7 +6,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class AuthResponse {
-
     private String accessToken;
     private String tokenType;
     private long expiresIn;
