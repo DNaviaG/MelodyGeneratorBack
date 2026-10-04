@@ -6,6 +6,8 @@ escala, y gestiona los usuarios de la aplicación.
 Este repositorio es **la parte de servidor**. El frontend (Angular) tiene su propio repositorio.
 https://github.com/DNaviaG/MelodyGeneratorFront
 
+![Vista del front](assets/melodias.png)
+
 ## Qué hace el proyecto
 
 El generador no produce notas al azar. Aplica teoría musical:
