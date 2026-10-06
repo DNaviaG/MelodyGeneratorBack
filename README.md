@@ -85,7 +85,3 @@ controller/  los endpoints
 musicLogic/  el generador: MusicTheory, MelodyMaker, MeasureGenerator, MeasureNoteGenerator
 config/      los beans (PasswordEncoder)
 ```
-
-La separación entre `model`, `entity` y `dto` es la decisión de diseño que más pesa aquí:
-son tres cosas distintas con tres consumidores distintos. El mismo `Note` no puede ser las
-tres, porque cualquier cambio en la base de datos cambiaría el JSON, y al revés.
